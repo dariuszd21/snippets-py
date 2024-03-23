@@ -1,0 +1,55 @@
+[build-system]
+requires = [
+    "flit_core ~= 3.9",
+]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "snippets-py"
+authors = [{name = "Dariusz D", email = "darekduda21@gmail.com"}]
+description = "Set of various code snippets written in Python."
+requires-python = ">=3.11"
+dependencies = [
+]
+# In future, it would be dynamic attribute based on Git tag and also stored in project.
+version = "0.1.0"
+
+[tool.flit.module]
+name = "dduda"
+
+[project.optional-dependencies]
+dev = [
+    "flit==3.9.0",
+    "pytest==7.4.3",
+    "ruff==0.1.6",
+]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 88
+exclude = [
+    ".git",
+    ".nox",
+    ".pants.d",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".venv",
+    "dist",
+    "venv",
+]
+# pyflakes, flake8-bugbear, pycodestyle, isort, pep8-naming, flake8-bandit, flake8-builtins
+select = ["F", "B", "E", "W", "I", "N", "S", "A"]
+
+# Note: Ruff supports a top-level `src` option in lieu of isort's `src_paths` setting.
+src = ["src", "tests"]
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401"]
+
+[tool.pytest.ini_options]
+addopts = [
+    "--import-mode=importlib",
+]
+pythonpath = ["src"]
+
+
