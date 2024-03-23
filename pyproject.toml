@@ -45,6 +45,7 @@ src = ["src", "tests"]
 
 [tool.ruff.per-file-ignores]
 "__init__.py" = ["F401"]
+"tests/*.py" = ["S101"]
 
 [tool.pytest.ini_options]
 addopts = [
