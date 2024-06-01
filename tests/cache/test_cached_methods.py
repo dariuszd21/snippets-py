@@ -57,3 +57,36 @@ def test_cached_method_called_once_for_same_instance(instance_one) -> None:
 
     assert cache_info.hits == 1
     assert cache_info.misses == 1
+
+
+def test_cached_method_called_simultanously_by_two_instances(
+    instance_one, instance_two
+) -> None:
+    """If instances will re-run method in mixed order, cache will be cleared every time."""
+    instance_one.method_one()
+    instance_two.method_one()
+    instance_one.method_one()
+    instance_two.method_one()
+
+    cache_info = ClassWithCachedFunctions.method_one.cache_info()
+
+    assert cache_info.hits == 0
+    assert cache_info.misses == 4
+
+
+def test_cached_method_correct_implementation(instance_one, instance_two) -> None:
+    """If instances will re-run method in mixed order, cache will be cleared every time."""
+    instance_one.method_two()
+    instance_two.method_two()
+    instance_one.method_two()
+    instance_two.method_two()
+
+    cache_info = instance_one.method_two.cache_info()
+
+    assert cache_info.hits == 1
+    assert cache_info.misses == 1
+
+    cache_info_instance_two = instance_two.method_two.cache_info()
+
+    assert cache_info_instance_two.hits == 1
+    assert cache_info_instance_two.misses == 1
