@@ -28,8 +28,8 @@ dev = [
 src = ["src", "tests"]
 
 [tool.ruff.lint]
-# pyflakes, flake8-bugbear, pycodestyle, isort, pep8-naming, flake8-bandit, flake8-builtins
-select = ["F", "B", "E", "W", "I", "N", "S", "A"]
+# pyflakes, flake8-bugbear, pycodestyle, isort, pep8-naming, flake8-bandit, flake8-builtins, pyupgrade
+select = ["F", "B", "E", "W", "I", "N", "S", "A", "UP"]
 
 [tool.ruff.lint.per-file-ignores]
 "__init__.py" = ["F401"]

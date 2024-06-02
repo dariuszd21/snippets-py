@@ -1,4 +1,4 @@
-from typing import Any, Optional
+from typing import Any
 
 
 class SingletonDecorator:
@@ -17,11 +17,11 @@ class SingletonDecorator:
 
     """
 
-    def __init__(self, cls: Optional[Any] = None) -> "SingletonDecorator":
+    def __init__(self, cls: Any = None) -> "SingletonDecorator":
         self._cls = cls
         self._instance = None
 
-    def __call__(self, cls: Optional[Any] = None) -> None:
+    def __call__(self, cls: Any = None) -> Any:
         # Check if called with or without arguments
         if self._cls is not None:
             cls = self._cls
