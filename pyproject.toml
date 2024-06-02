@@ -24,11 +24,12 @@ dev = [
     "ruff==0.4.5",
 ]
 
-# pyflakes, flake8-bugbear, pycodestyle, isort, pep8-naming, flake8-bandit, flake8-builtins
-select = ["F", "B", "E", "W", "I", "N", "S", "A"]
-
 # Note: Ruff supports a top-level `src` option in lieu of isort's `src_paths` setting.
 src = ["src", "tests"]
+
+[tool.ruff.lint]
+# pyflakes, flake8-bugbear, pycodestyle, isort, pep8-naming, flake8-bandit, flake8-builtins
+select = ["F", "B", "E", "W", "I", "N", "S", "A"]
 
 [tool.ruff.lint.per-file-ignores]
 "__init__.py" = ["F401"]

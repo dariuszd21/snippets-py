@@ -1,11 +1,10 @@
+import pytest
 from dduda.snippets.cache.cached_functions import (
-    DEFAULT_STR_ARG,
     DEFAULT_INT_ARG,
+    DEFAULT_STR_ARG,
     cached_function,
     cached_function_with_default_args,
 )
-
-import pytest
 
 
 @pytest.fixture(autouse=True)

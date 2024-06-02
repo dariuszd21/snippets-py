@@ -1,5 +1,4 @@
 import pytest
-
 from dduda.snippets.singleton.singleton_dunder import SingletonNewDunder
 
 

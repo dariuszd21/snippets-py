@@ -1,6 +1,5 @@
-from dduda.snippets.cache.cached_methods import ClassWithCachedFunctions
-
 import pytest
+from dduda.snippets.cache.cached_methods import ClassWithCachedFunctions
 
 
 def instance_factory() -> ClassWithCachedFunctions:
@@ -62,7 +61,7 @@ def test_cached_method_called_once_for_same_instance(instance_one) -> None:
 def test_cached_method_called_simultanously_by_two_instances(
     instance_one, instance_two
 ) -> None:
-    """If instances will re-run method in mixed order, cache will be cleared every time."""
+    """Re-run in mixed order cleans cache."""
     instance_one.method_one()
     instance_two.method_one()
     instance_one.method_one()
@@ -75,7 +74,7 @@ def test_cached_method_called_simultanously_by_two_instances(
 
 
 def test_cached_method_correct_implementation(instance_one, instance_two) -> None:
-    """If instances will re-run method in mixed order, cache will be cleared every time."""
+    """Re-run in mixed order works correctly for cached in __init__."""
     instance_one.method_two()
     instance_two.method_two()
     instance_one.method_two()

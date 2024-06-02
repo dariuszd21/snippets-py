@@ -1,7 +1,6 @@
 from typing import Type, Union
 
 import pytest
-
 from dduda.snippets.singleton.singleton_decorator import SingletonDecorator
 
 

@@ -5,7 +5,7 @@ class ClassWithCachedFunctions:
     def __init__(self) -> None:
         self.method_two = lru_cache(maxsize=1)(self._method_two)
 
-    @lru_cache(maxsize=1)
+    @lru_cache(maxsize=1)  # noqa: B019 (cached-instance-method)
     def method_one(self) -> None:
         """Method that does nothing.
 
