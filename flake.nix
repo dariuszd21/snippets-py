@@ -1,8 +1,8 @@
 {
-  description = "Flake for python 3.11 development shell";
+  description = "Flake for python 3.14 development shell";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
@@ -14,10 +14,11 @@
         {
           devShells.default = pkgs.mkShell {
             packages = [ 
-              pkgs.stdenv pkgs.python311Full
-              pkgs.python311Packages.pytest
-              pkgs.python311Packages.python-lsp-server
-              pkgs.python311Packages.flit
+              pkgs.stdenv
+              pkgs.python314
+              pkgs.python314Packages.pytest
+              pkgs.python314Packages.python-lsp-server
+              pkgs.python314Packages.flit
               pkgs.ruff
             ];
             shellHook = ''
