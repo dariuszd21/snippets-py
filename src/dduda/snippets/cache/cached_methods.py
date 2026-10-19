@@ -19,4 +19,4 @@ class ClassWithCachedFunctions:
         """Class method that does nothing."""
 
     def _method_two(self) -> None:
-        """Method two implementation that will be cached per instances."""
+        """Method two implementation that will be cached per instance."""

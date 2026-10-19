@@ -17,7 +17,7 @@ class SingletonDecorator:
 
     """
 
-    def __init__(self, cls: Any = None) -> "SingletonDecorator":
+    def __init__(self, cls: Any = None) -> None:
         self._cls = cls
         self._instance = None
 

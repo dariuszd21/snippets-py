@@ -20,6 +20,7 @@
               pkgs.python314Packages.python-lsp-server
               pkgs.python314Packages.flit
               pkgs.ruff
+              pkgs.zuban
             ];
             shellHook = ''
               export LD_LIBRARY_PATH="${pkgs.stdenv.cc.cc.lib}/lib/"
